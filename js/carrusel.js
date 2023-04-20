@@ -80,7 +80,7 @@ self.addEventListener('notificationclick', function (event) {
     }).then(function (clientList) {
         for (var i = 0; i < clientList.length; i++) {
             var client = clientList[i];
-            if (client.url == 'http://127.0.0.1:8080/' && 'focus' in client)
+            if (client.url == 'http://159.89.18.27/' && 'focus' in client)
                 return client.focus();
         }
         if (clients.openWindow)
@@ -116,7 +116,7 @@ const debounce = (func, wait) => {
 /*Esta funcion se encarga de cargar las imagenes del carrusel de la pagina principal*/
 function imagenes_carrucel(){
     var request = new XMLHttpRequest();
-    request.open('GET', "http://127.0.0.1:8000/materiales/");
+    request.open('GET', "http://159.89.18.27/materiales/");
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("content-type", "application/json");
 
@@ -178,7 +178,7 @@ function imagenes_carrucel(){
 /*Esta funcion se encarga de buscar los eventos que se encuentran en la base de datos*/
 function buscar_evento(){
     var request = new XMLHttpRequest();
-    request.open('GET', "http://127.0.0.1:8000/materiales/");
+    request.open('GET', "159.89.18.27/materiales/");
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("content-type", "application/json");
     
