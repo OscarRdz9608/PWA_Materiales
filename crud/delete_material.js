@@ -16,7 +16,7 @@ function delete_material() {
     }).then(result => {
         if (result.value) {
             var request = new XMLHttpRequest();
-            request.open("DELETE", "http://127.0.0.1:8000/materiales/" + id, true);
+            request.open("DELETE", "http://159.89.18.27/materiales/" + id, true);
             request.setRequestHeader("accept", "application/json");
             request.setRequestHeader("Authorization", "Bearer " +token);
             request.setRequestHeader("Content-Type", "application/json");

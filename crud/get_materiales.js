@@ -2,7 +2,7 @@ function getMateriales() {
     
     
     var request = new XMLHttpRequest();
-    request.open('GET', "http://127.0.0.1:8000/materiales/");
+    request.open('GET', "http://159.89.18.27/materiales/");
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("content-type", "application/json");
     

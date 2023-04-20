@@ -3,7 +3,7 @@ function ver_material() {
     var id = window.location.search.substring(1);
 
     var request = new XMLHttpRequest();
-    request.open('GET', "http://127.0.0.1:8000/materiales/"+ id,true);
+    request.open('GET', "http://159.89.18.27/materiales/"+ id,true);
     request.setRequestHeader("Accept", "apppcation/json");
     request.setRequestHeader("content-type", "apppcation/json");
 

@@ -23,7 +23,7 @@ function update_materiales() {
     }
     
     var request = new XMLHttpRequest();
-    request.open('PUT', "http://127.0.0.1:8000/materiales/",true);
+    request.open('PUT', "http://159.89.18.27/materiales/",true);
     request.setRequestHeader("accept", "application/json");
     request.setRequestHeader("Authorization", "Bearer " +token);
     request.setRequestHeader("Content-Type", "application/json");
