@@ -10,11 +10,11 @@ if ("serviceWorker" in navigator) {
 
 const notification = new Notification("Bienvenido!", {
     body: "TIENDA DE MATERIALES ",
-    icon: "/images/icons/icon-96x96.png",
+    icon: "/katiaolem.github.io/images/icons/icon-96x96.png",
     timeout: 1500000,
     vibrate: [100, 100, 100],
     onClick: function(){
-        window.location = "/templates/materiales.html";
+        window.location = "/katiaolem.github.io/templates/materiales.html";
         console.log(this);
     }
 });
@@ -62,7 +62,7 @@ self.addEventListener('push', function (event) {
         const notificationText = event.data.text();
         const showNotification = self.registration.showNotification('Notificaciones', {
             body: notificationText,
-            icon: '/images/icons/icon-96x96.png'
+            icon: '/katiaolem.github.io/images/icons/icon-96x96.png'
         });
         // Make sure the toast notification is displayed.
         event.waitUntil(showNotification);
@@ -80,7 +80,7 @@ self.addEventListener('notificationclick', function (event) {
     }).then(function (clientList) {
         for (var i = 0; i < clientList.length; i++) {
             var client = clientList[i];
-            if (client.url == 'http://159.89.18.27/' && 'focus' in client)
+            if (client.url == 'http://127.0.0.1:8080/' && 'focus' in client)
                 return client.focus();
         }
         if (clients.openWindow)
@@ -116,7 +116,7 @@ const debounce = (func, wait) => {
 /*Esta funcion se encarga de cargar las imagenes del carrusel de la pagina principal*/
 function imagenes_carrucel(){
     var request = new XMLHttpRequest();
-    request.open('GET', "http://159.89.18.27/materiales/");
+    request.open('GET', "http://127.0.0.1:8000/materiales/");
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("content-type", "application/json");
 
@@ -160,7 +160,7 @@ function imagenes_carrucel(){
                         concat = id_product.concat(cont-1);    
                         //console.log(concat);
                         carru.innerHTML += '<div class="product" id="'+concat+'">'+
-                        '<a class="navbar-brand" href="/templates/ubicacion.html?'+id+'">'+
+                        '<a class="navbar-brand" href="/katiaolem.github.io/templates/ubicacion.html?'+id+'">'+
                             '<img src="'+imagen+'" class="d-inline-block align-top" alt="">'+
                         '</a>'+
                         '<h5>'+nombre+'</h5>'+
@@ -178,7 +178,7 @@ function imagenes_carrucel(){
 /*Esta funcion se encarga de buscar los eventos que se encuentran en la base de datos*/
 function buscar_evento(){
     var request = new XMLHttpRequest();
-    request.open('GET', "159.89.18.27/materiales/");
+    request.open('GET', "http://127.0.0.1:8000/materiales/");
     request.setRequestHeader("Accept", "application/json");
     request.setRequestHeader("content-type", "application/json");
     
